@@ -2,6 +2,17 @@
 
 一个功能完整的 AI 驱动海报设计平台，支持智能排版、AI 图像生成、模板库和实时编辑。
 
+## 🚀 一键部署到 Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FJingHuiSong%2Fmydesign-&env=OPENROUTER_API_KEY&envDescription=OpenRouter%20API%20%E5%AF%86%E9%92%A5%EF%BC%8C%E7%94%A8%E4%BA%8E%20AI%20%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90&envLink=https%3A%2F%2Fopenrouter.ai%2Fkeys&project-name=ai-poster-design&repository-name=ai-poster-design)
+
+点击上方按钮，在 Vercel 中自动部署项目。部署时需要配置 `OPENROUTER_API_KEY` 环境变量。
+
+## 📖 部署指南
+
+- **[Vercel 部署指南](./VERCEL部署指南.md)** - 详细的 Vercel 自动部署设置教程
+- **[本地部署指南](./本地部署指南.md)** - 本地开发环境搭建教程
+
 ## 功能特性
 
 ### 核心功能
@@ -37,19 +48,48 @@ OPENROUTER_API_KEY=your_openrouter_api_key_here
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
 \`\`\`
 
-## 本地开发
+## 🖥️ 本地开发
 
-1. 克隆项目
-2. 安装依赖：`npm install`
-3. 创建 `.env.local` 文件并添加环境变量
-4. 运行开发服务器：`npm run dev`
-5. 访问 `http://localhost:3000`
+```bash
+# 1. 克隆项目
+git clone https://github.com/JingHuiSong/mydesign-.git
+cd mydesign-
 
-## 部署到 Vercel
+# 2. 安装依赖（使用 --legacy-peer-deps 处理 React 19 兼容性）
+npm install --legacy-peer-deps
 
-1. 点击右上角的 "Publish" 按钮
-2. 在 Vercel 项目设置中添加环境变量
-3. 部署完成后即可访问
+# 3. 创建环境变量文件
+cp .env.example .env.local
+
+# 4. 编辑 .env.local，添加你的 API 密钥
+# OPENROUTER_API_KEY=your_api_key_here
+
+# 5. 启动开发服务器
+npm run dev
+
+# 6. 访问 http://localhost:3000
+```
+
+详细步骤请查看 [本地部署指南](./本地部署指南.md)
+
+## ☁️ 部署到 Vercel（自动部署）
+
+### 方式一：一键部署（推荐）
+点击顶部的 "Deploy with Vercel" 按钮，按提示配置即可。
+
+### 方式二：手动导入
+1. 访问 [Vercel](https://vercel.com)，使用 GitHub 登录
+2. 点击 **New Project** → 导入 `mydesign-` 仓库
+3. 配置环境变量：
+   - `OPENROUTER_API_KEY`: 你的 OpenRouter API 密钥
+4. 点击 **Deploy**
+
+**✨ 自动部署已配置！**
+- 每次推送代码到 GitHub，Vercel 会自动构建和部署
+- 每次 commit 都会触发自动更新
+- 构建时间约 2-3 分钟
+
+详细步骤请查看 [Vercel 部署指南](./VERCEL部署指南.md)
 
 ## 项目结构
 
